@@ -1,0 +1,132 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+form label{
+  font-size: 17px;
+}
+.pageContain {
+  background-color: #8884d8;
+  height: 100%;
+  border-radius: 42px;
+  margin: 3px;
+  padding: 3% 0%;
+}
+  .pageContain h1, .pageContain h3, .pageContain h4{
+    font-weight: 600;
+  }
+  .pageContain h1{
+    font-style: italic;
+    color: white;
+  }
+  .pageContain li, .budgetList{
+    font-size: 17px;
+  }
+
+.individGraph {
+  display: inline-block;
+  background-color: rgba(252, 252, 252, 0.95);
+  margin-top: 1%;
+  border-radius: 10px;
+  width: 44%;
+}
+  #firstGraph{
+    margin-left: 4%;
+    margin-right: 2%;
+  }
+  #secondGraph{
+    margin-right: 4%;
+  }
+
+.infoBox {
+  display: inline-block;
+  vertical-align: top;
+  color: black;
+  height: 210px;
+  background-color: rgba(252, 252, 252, 0.67);
+  border-radius: 10px;
+  margin-top: 1%;
+  padding: 10px;
+}
+  #monthtotal{
+    width: 22%;
+    height: 300px;
+    margin-right: 2%;
+    margin-left: 4%;
+  }
+    #monthtotal p{
+      font-size: 22px;
+      margin: 20px 10px;
+    }
+  #didYouKnow{
+    margin-right: 4%;
+    width: 66%;
+    height: 300px;
+    
+  }
+.infoGraphics {
+  display: inline-block;
+}
+
+.infoPara, .infoImg {
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+.infoPara {
+  font-size: 18px;
+}
+.infoImg{
+  border-radius: 10px;
+  margin: 8px 5px 8px 10px;
+}
+#monthBudgets{
+  margin: 0% 4%;
+}
+
+#radar{
+  margin-right: 4%;
+}
+
+#allBudgets{
+  overflow: scroll;
+  height: 400px;
+}
+  #allBudgets li{
+    font-size: 17px;
+  }
