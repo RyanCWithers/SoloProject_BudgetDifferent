@@ -43,7 +43,6 @@ const BudgetItemForm = props =>{
     return(
         <div>
             <form onSubmit = {onSubmitHandler} className = "card w-50 mx-auto ">
-                <h2 className = "card-title">Budget Item</h2>
                 <div className = "card-body">
                     <div className = "form-group w-50 mx-auto">
                         <label className = "text-info">Category</label>
@@ -75,7 +74,7 @@ const BudgetItemForm = props =>{
                             name = "itemDesc"
                             value = {state.itemDesc}
                             onChange = {handleChange}
-                            className = "form-control"
+                            className = "form-control text-center"
                         />
                     </div>
                     <div className = "form-group w-50 mx-auto">
@@ -85,7 +84,7 @@ const BudgetItemForm = props =>{
                             name = "itemAmount"
                             value = {state.itemAmount}
                             onChange = {handleChange}
-                            className = "form-control"
+                            className = "form-control text-center"
                         />
                     </div>
                     <input

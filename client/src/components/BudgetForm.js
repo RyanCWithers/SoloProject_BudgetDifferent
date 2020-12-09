@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useReducer, useState} from 'react';
 import CancelButton from './CancelButton';
 
 function reducer(state, action) {
@@ -9,7 +9,7 @@ function reducer(state, action) {
 };
 
 const BudgetForm = props =>{
-    const {budget, onSubmitProp, cancelId} = props;
+    const {budget, onSubmitProp, cancelId, errs} = props;
 
     const initialState = {
         budgetMonth: budget.budgetMonth,
@@ -40,7 +40,6 @@ const BudgetForm = props =>{
     return(
         <div>
             <form onSubmit = {onSubmitHandler} className = "card w-50 mx-auto mt-2">
-                <h2 className = "card title">Monthly Budget</h2>
                 <div className = "card-body">
                     <div className = "form-group">
                         <label className = "text-info">Month: </label>
@@ -51,6 +50,11 @@ const BudgetForm = props =>{
                             onChange = {handleChange}
                             className = "form-control w-50 mx-auto text-center"
                         />
+                        {
+                            errs.budgetMonth?
+                            <p className = "form-text text-muted text-danger">{errs.budgetMonth.message}</p>:
+                            null
+                        }
                     </div>
                     <div className = "form-group">
                         <label className = "text-info">Year: </label>
@@ -61,6 +65,11 @@ const BudgetForm = props =>{
                             onChange = {handleChange}
                             className = "form-control w-50 mx-auto text-center"
                         />
+                        {
+                            errs.budgetYear?
+                            <p className = "form-text text-muted text-danger">{errs.budgetYear.message}</p>:
+                            null
+                        }
                     </div>
                     <div className = "form-group">
                         <label className = "text-info">Total Monthly Pay: </label>
@@ -71,6 +80,11 @@ const BudgetForm = props =>{
                             onChange = {handleChange}
                             className = "form-control w-50 mx-auto text-center"
                         />
+                        {
+                            errs.budgetPayAmount?
+                            <p className = "form-text text-muted text-danger">{errs.budgetPayAmount.message}</p>:
+                            null
+                        }
                     </div>
                     <div className = "form-group">
                         <label className = "text-info">Total Hours Worked: </label>
@@ -81,6 +95,11 @@ const BudgetForm = props =>{
                             onChange = {handleChange}
                             className = "form-control w-50 mx-auto text-center"
                         />
+                        {
+                            errs.budgetMonth?
+                            <p className = "form-text text-muted text-danger">{errs.budgetHoursWorked.message}</p>:
+                            null
+                        }
                     </div>
                     <input 
                         type = "submit"

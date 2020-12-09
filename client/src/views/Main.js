@@ -96,18 +96,7 @@ const Main = props =>{
     return(
         <div class = "pageContain">
             <h1>Welcome to BudgetDifferent!</h1>
-            <p>A different way to look at money</p>
-            <div className = "card text-center p-4" id="monthBudgets">
-                <h3 className="card-title">Monthly Budgets: </h3>
-                {
-                    loaded?
-                    <BudgetList budgets = {budgets} removeFromDom = {removeFromDom} className = "card-body"/>:
-                    null
-                }
-                <Link to={'/api/budgetdifferent/new'}>
-                    <button className="btn btn-info btn-lg my-2">Create Budget</button>
-                </Link>
-            </div>
+            <p id="appDesc">A different way to look at money</p>
             <div>
                 {
                     loaded?
@@ -135,7 +124,7 @@ const Main = props =>{
                                 >
                                     <CartesianAxis strokeDasharray= "3 3"/>
                                     <XAxis dataKey = "budgetLabel"/>
-                                    <YAxis />
+                                    <YAxis label={{ value: 'Amount ($)', angle: -90 , position: "insideLeft"}}/>
                                     <Tooltip />
                                     <Bar dataKey = "budgetTotal" fill="green" name = "Total Spent ($)"/>
                                 </BarChart>
@@ -145,6 +134,17 @@ const Main = props =>{
                     :
                     null
                 }
+            </div>
+            <div className = "card w-50 mx-auto" id="monthBudgets">
+                <h3 className="card-title mt-4"><i>Monthly Budgets: </i></h3>
+                {
+                    loaded?
+                    <BudgetList budgets = {budgets} removeFromDom = {removeFromDom} className = "card-body"/>:
+                    null
+                }
+                <Link to={'/api/budgetdifferent/new'}>
+                    <button className="btn btn-info btn-lg my-2">Create Budget</button>
+                </Link>
             </div>
             
             

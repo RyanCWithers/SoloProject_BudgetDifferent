@@ -19,6 +19,7 @@ const BudgetItemCreate = props =>{
 
     return(
         <div class="pageContain">
+            <h1>Create a Budget Item</h1>
             <BudgetItemForm budgetItem = {budgetItem} onSubmitProp= {createBudgetItem} cancelId = {props.id}/>
         </div>
     )

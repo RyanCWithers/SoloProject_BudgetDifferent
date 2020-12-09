@@ -116,7 +116,7 @@ form label{
   margin: 8px 5px 8px 10px;
 }
 #monthBudgets{
-  margin: 0% 4%;
+  margin: 4% 4%;
 }
 
 #radar{
@@ -125,8 +125,16 @@ form label{
 
 #allBudgets{
   overflow: scroll;
+  overflow-x: hidden;
   height: 400px;
+  
 }
   #allBudgets li{
-    font-size: 17px;
+    font-size: 21px;
+    list-style: none;
   }
+
+#appDesc{
+  font-size: 18px;
+  color: black;
+}

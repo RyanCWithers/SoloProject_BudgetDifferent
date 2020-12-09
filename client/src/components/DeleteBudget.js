@@ -14,7 +14,7 @@ const DeleteButton = props =>{
             .catch(err => console.log(err))
     };
     return(
-        <button className = "btn btn-danger sm col-1" onClick = {onClickHandler}>Delete</button>
+        <button className = "btn btn-danger" onClick = {onClickHandler}>Delete</button>
     )
 };
 

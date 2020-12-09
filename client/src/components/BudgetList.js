@@ -5,16 +5,25 @@ import DeleteBudget from '../components/DeleteBudget';
 const BudgetList = props =>{
 
     return(
-        <ul className = "list-group-flush mx-auto container text-center" id="allBudgets">
+        <ul className = "list-group-flush mx-auto" id="allBudgets">
             {props.budgets.map((item, index) =>(
-                <li key={index} className = "list-group-item row my-6" class="budgetList">
-                    <Link to={"/api/budgetdifferent/" + item._id}>
-                        <span className = "col-6 mr-3">{item.budgetMonth} {item.budgetYear}</span>
-                        </Link>
-                    <Link to = {"/api/budgetdifferent/" + item._id + "/edit"} >
-                        <button className = "btn btn-secondary col-1">Edit</button>
-                    </Link>
-                    <DeleteBudget budgetId = {item._id} successCallback ={() => props.removeFromDom(item._id)}/>
+                <li key={index} className = "list-group-item" class="budgetList">
+                    <ul className = "list-group list-group-horizontal-md">
+                        <li className = "list-group-item w-50">
+                            <Link to={"/api/budgetdifferent/" + item._id}>
+                                <span>{item.budgetMonth} {item.budgetYear}</span>
+                            </Link>
+                        </li>
+                        <li className = "list-group-item">
+                            <Link to = {"/api/budgetdifferent/" + item._id + "/edit"} >
+                                <button className = "btn btn-secondary">Edit</button>
+                            </Link>
+                        </li>
+                        <li className = "list-group-item">
+                            <DeleteBudget budgetId = {item._id} successCallback ={() => props.removeFromDom(item._id)}/>
+                        </li>
+                    </ul>
+                    
                 </li>
             ))}
         </ul>

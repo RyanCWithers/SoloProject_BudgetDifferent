@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const BudgetSchema = new mongoose.Schema({
-    budgetMonth: {type: String},
-    budgetYear: {type: Number},
-    budgetPayAmount: {type: Number},
-    budgetHoursWorked: {type: Number},
+    budgetMonth: {type: String, required: [true, 'The month name is required.']},
+    budgetYear: {type: String, required: [true, 'Please enter the year (XXXX).']},
+    budgetPayAmount: {type: String, required: [true, 'Please enter the amount of money that you made this month.']},
+    budgetHoursWorked: {type: String, required: [true, 'Enter the amount of hours that you worked.']},
     budgetItems: [
         {
             itemDesc: {type: String},

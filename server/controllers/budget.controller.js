@@ -26,7 +26,7 @@ module.exports.displaySingleBudget = (req, res) =>{
 };
 
 module.exports.updateBudgetInfo = (req, res) =>{
-    Budget.findOneAndUpdate({_id: req.params.id}, req.body, {new: true})
+    Budget.findOneAndUpdate({_id: req.params.id}, req.body, {new: true, runValidators: true})
         .then(updatedInfo => res.json(updatedInfo))
         .catch(err => res.json(err))
 };
