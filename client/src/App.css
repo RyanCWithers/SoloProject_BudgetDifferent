@@ -41,18 +41,18 @@ form label{
   font-size: 17px;
 }
 .pageContain {
-  background-color: #8884d8;
+  background-color: rgb(196, 199, 245);
   height: 100%;
-  border-radius: 42px;
   margin: 3px;
-  padding: 3% 0%;
+  padding: 1% 0%;
 }
   .pageContain h1, .pageContain h3, .pageContain h4{
     font-weight: 600;
   }
   .pageContain h1{
-    font-style: italic;
-    color: white;
+    color:white;
+    text-decoration: underline;
+    margin-bottom: 1%;
   }
   .pageContain li, .budgetList{
     font-size: 17px;
@@ -61,9 +61,9 @@ form label{
 .individGraph {
   display: inline-block;
   background-color: rgba(252, 252, 252, 0.95);
-  margin-top: 1%;
-  border-radius: 10px;
-  width: 44%;
+  border-radius: 35px;
+  padding: 2%;
+  width: 100%;
 }
   #firstGraph{
     margin-left: 4%;
@@ -72,6 +72,11 @@ form label{
   #secondGraph{
     margin-right: 4%;
   }
+
+#containGraph {
+  display: inline-block;
+  width: 50%;
+}
 
 .infoBox {
   display: inline-block;
@@ -116,11 +121,16 @@ form label{
   margin: 8px 5px 8px 10px;
 }
 #monthBudgets{
-  margin: 4% 4%;
+  margin: 0% 1%;
+  display: inline-block;
+  border-radius: 35px;
+  background-color: white;
+  padding: 2%;
+  vertical-align: top;
 }
 
 #radar{
-  margin-right: 4%;
+  margin-bottom: 2%;
 }
 
 #allBudgets{
@@ -134,7 +144,3 @@ form label{
     list-style: none;
   }
 
-#appDesc{
-  font-size: 18px;
-  color: black;
-}

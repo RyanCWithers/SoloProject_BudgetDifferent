@@ -2,6 +2,7 @@ import React from 'react';
 import BudgetItemForm from '../components/BudgetItemForm';
 import axios from 'axios';
 import { navigate } from '@reach/router';
+import Navbar from '../components/Navbar';
 
 const BudgetItemCreate = props =>{
     const budgetItem = {
@@ -18,10 +19,14 @@ const BudgetItemCreate = props =>{
     };
 
     return(
-        <div class="pageContain">
-            <h1>Create a Budget Item</h1>
-            <BudgetItemForm budgetItem = {budgetItem} onSubmitProp= {createBudgetItem} cancelId = {props.id}/>
+        <div>
+            <Navbar />
+            <div class="pageContain">
+                <h1>Create a Budget Item</h1>
+                <BudgetItemForm budgetItem = {budgetItem} onSubmitProp= {createBudgetItem} cancelId = {props.id}/>
+            </div>
         </div>
+        
     )
 };
 

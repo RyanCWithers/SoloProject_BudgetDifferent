@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from 'react';
+import React, {useReducer} from 'react';
 import CancelButton from './CancelButton';
 
 function reducer(state, action) {

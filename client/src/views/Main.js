@@ -16,6 +16,7 @@ import {
     XAxis,
     YAxis
     } from 'recharts';
+import Navbar from '../components/Navbar';
 
 const Main = props =>{
     const [budgets, setBudgets] = useState([]);
@@ -94,60 +95,62 @@ const Main = props =>{
         console.log(monthData);
     }
     return(
-        <div class = "pageContain">
-            <h1>Welcome to BudgetDifferent!</h1>
-            <p id="appDesc">A different way to look at money</p>
-            <div>
-                {
-                    loaded?
-                    <div>
-                        <div class="individGraph" id="radar">
-                            <h4>Spending Tendencies by Amount</h4>
-                            <ResponsiveContainer height={500}>
-                                <RadarChart outerRadius = {200} height = {250} data={budgetData}>
-                                    <PolarGrid />
-                                    <PolarAngleAxis dataKey="name" />
-                                    <PolarRadiusAxis angle = {30}/>
-                                    <Radar name="Total Spending ($)" dataKey = "val" stroke = "lightgreen" fill="lightgreen" fillOpacity = {0.6} />
-                                    <Tooltip />
-                                </RadarChart>
-                            </ResponsiveContainer>
+        <div>
+            <Navbar />
+            <div class = "pageContain">
+                <h1>Main Budget Dashboard</h1>
+                <div id="monthBudgets">
+                    <h3><i>Monthly Budgets: </i></h3>
+                    {
+                        loaded?
+                        <BudgetList budgets = {budgets} removeFromDom = {removeFromDom} className = "card-body"/>:
+                        null
+                    }
+                    <Link to={'/api/budgetdifferent/new'}>
+                        <button className="btn btn-outline-info btn-lg my-2">Create Budget</button>
+                    </Link>
+                </div>
+                <div id="containGraph">
+                    {
+                        loaded?
+                        <div>
+                            <div class="individGraph" id="radar">
+                                <h4>Spending Tendencies by Amount</h4>
+                                <ResponsiveContainer height = {350}>
+                                    <RadarChart outerRadius = {150} height = {200} data={budgetData}>
+                                        <PolarGrid />
+                                        <PolarAngleAxis dataKey="name" />
+                                        <PolarRadiusAxis angle = {30}/>
+                                        <Radar name="Total Spending ($)" dataKey = "val" stroke = "green" fill="green" fillOpacity = {0.6} />
+                                        <Tooltip />
+                                    </RadarChart>
+                                </ResponsiveContainer>
+                            </div>
+                            <div class="individGraph" id="totalBar">
+                                <h4>Total Spending Overall</h4>
+                                <ResponsiveContainer height={350}>
+                                    <BarChart
+                                        height = {200}
+                                        data= {monthData}
+                                        margin = {{top: 20, right: 30, left: 20, bottom: 5}}
+                                    >
+                                        <CartesianAxis strokeDasharray= "3 3"/>
+                                        <XAxis dataKey = "budgetLabel"/>
+                                        <YAxis label={{ value: 'Amount ($)', angle: -90 , position: "insideLeft"}}/>
+                                        <Tooltip />
+                                        <Bar dataKey = "budgetTotal" fill="green" name = "Total Spent ($)"/>
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
                         </div>
-                        <div class="individGraph" id="totalBar">
-                            <h4>Total Spending Overall</h4>
-                            <ResponsiveContainer height={500}>
-                                <BarChart
-                                    width = {300}
-                                    height = {500}
-                                    data= {monthData}
-                                    margin = {{top: 20, right: 30, left: 20, bottom: 5}}
-                                >
-                                    <CartesianAxis strokeDasharray= "3 3"/>
-                                    <XAxis dataKey = "budgetLabel"/>
-                                    <YAxis label={{ value: 'Amount ($)', angle: -90 , position: "insideLeft"}}/>
-                                    <Tooltip />
-                                    <Bar dataKey = "budgetTotal" fill="green" name = "Total Spent ($)"/>
-                                </BarChart>
-                            </ResponsiveContainer>
-                        </div>
-                    </div>
-                    :
-                    null
-                }
+                        :
+                        null
+                    }
+                </div>
+                
+                
+                
             </div>
-            <div className = "card w-50 mx-auto" id="monthBudgets">
-                <h3 className="card-title mt-4"><i>Monthly Budgets: </i></h3>
-                {
-                    loaded?
-                    <BudgetList budgets = {budgets} removeFromDom = {removeFromDom} className = "card-body"/>:
-                    null
-                }
-                <Link to={'/api/budgetdifferent/new'}>
-                    <button className="btn btn-info btn-lg my-2">Create Budget</button>
-                </Link>
-            </div>
-            
-            
         </div>
     )
 };

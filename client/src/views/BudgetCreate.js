@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useState} from 'react';
 import BudgetForm from '../components/BudgetForm';
 import {navigate} from '@reach/router';
-import CancelButton from '../components/CancelButton';
+import Navbar from '../components/Navbar';
 
 const BudgetCreate = props =>{
     const [errs, setErrs] = useState({});
@@ -26,9 +26,12 @@ const BudgetCreate = props =>{
             .catch(err => console.log(err))
     };
     return(
-        <div className = "pageContain">
-            <h1>Create a Monthly Budget</h1>
-            <BudgetForm budget = {budget} onSubmitProp = {createBudget} errs={errs} cancelId = {null}/>
+        <div>
+            <Navbar />
+            <div className = "pageContain">
+                <h1>Create a Monthly Budget</h1>
+                <BudgetForm budget = {budget} onSubmitProp = {createBudget} errs={errs} cancelId = {null}/>
+            </div>
         </div>
     )
 }
