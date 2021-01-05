@@ -121,7 +121,7 @@ const Main = props =>{
                                         <PolarGrid />
                                         <PolarAngleAxis dataKey="name" />
                                         <PolarRadiusAxis angle = {30}/>
-                                        <Radar name="Total Spending ($)" dataKey = "val" stroke = "green" fill="green" fillOpacity = {0.6} />
+                                        <Radar name="Total Spending ($)" dataKey = "val" stroke = "grey" fill="rgba(127, 125, 247, 0.884)" fillOpacity = {0.5} />
                                         <Tooltip />
                                     </RadarChart>
                                 </ResponsiveContainer>
@@ -138,7 +138,7 @@ const Main = props =>{
                                         <XAxis dataKey = "budgetLabel"/>
                                         <YAxis label={{ value: 'Amount ($)', angle: -90 , position: "insideLeft"}}/>
                                         <Tooltip />
-                                        <Bar dataKey = "budgetTotal" fill="green" name = "Total Spent ($)"/>
+                                        <Bar dataKey = "budgetTotal" stroke = "grey" fill="rgba(127, 125, 247, 0.884)" fillOpacity = {0.6} name = "Total Spent ($)"/>
                                     </BarChart>
                                 </ResponsiveContainer>
                             </div>

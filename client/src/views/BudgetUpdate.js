@@ -3,6 +3,7 @@ import BudgetForm from '../components/BudgetForm';
 import axios from 'axios';
 import { navigate } from '@reach/router';
 import DeleteBudget from '../components/DeleteBudget';
+import Navbar from '../components/Navbar';
 
 const BudgetUpdate = props =>{
     const [budget, setBudget] = useState({});
@@ -34,6 +35,7 @@ const BudgetUpdate = props =>{
 
     return(
         <div>
+            <Navbar />
             {
                 loaded?
                 <div className = "pageContain">

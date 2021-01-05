@@ -41,16 +41,16 @@ form label{
   font-size: 17px;
 }
 .pageContain {
-  background-color: rgb(196, 199, 245);
+  background-color: white;
   height: 100%;
   margin: 3px;
   padding: 1% 0%;
 }
   .pageContain h1, .pageContain h3, .pageContain h4{
-    font-weight: 600;
+    font-weight: 700;
   }
   .pageContain h1{
-    color:white;
+    color:rgba(127, 125, 247, 0.884);
     text-decoration: underline;
     margin-bottom: 1%;
   }
@@ -60,18 +60,22 @@ form label{
 
 .individGraph {
   display: inline-block;
-  background-color: rgba(252, 252, 252, 0.95);
+  background-color: rgba(196, 187, 247, 0.363);
   border-radius: 35px;
   padding: 2%;
-  width: 100%;
 }
   #firstGraph{
-    margin-left: 4%;
-    margin-right: 2%;
+    margin: 2% 2% 0% 0%;
   }
-  #secondGraph{
-    margin-right: 4%;
+
+  #firstGraph, #secondGraph{
+    width: 44%;
   }
+
+  #radar, #totalBar {
+    width: 100%;
+  }
+
 
 #containGraph {
   display: inline-block;
@@ -82,15 +86,14 @@ form label{
   display: inline-block;
   vertical-align: top;
   color: black;
-  height: 210px;
-  background-color: rgba(252, 252, 252, 0.67);
-  border-radius: 10px;
+  height: 20%;
+  background-color:  rgba(196, 187, 247, 0.363);
+  border-radius: 35px;
   margin-top: 1%;
   padding: 10px;
 }
   #monthtotal{
     width: 22%;
-    height: 300px;
     margin-right: 2%;
     margin-left: 4%;
   }
@@ -100,9 +103,7 @@ form label{
     }
   #didYouKnow{
     margin-right: 4%;
-    width: 66%;
-    height: 300px;
-    
+    width: 66%;    
   }
 .infoGraphics {
   display: inline-block;
@@ -117,7 +118,7 @@ form label{
   font-size: 18px;
 }
 .infoImg{
-  border-radius: 10px;
+  border-radius: 20px;
   margin: 8px 5px 8px 10px;
 }
 #monthBudgets{
@@ -125,7 +126,7 @@ form label{
   display: inline-block;
   border-radius: 35px;
   background-color: white;
-  padding: 2%;
+  padding: 0% 2% 2%;
   vertical-align: top;
 }
 
