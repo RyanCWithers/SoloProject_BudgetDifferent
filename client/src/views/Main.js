@@ -23,10 +23,11 @@ const Main = props =>{
     const [loaded, setLoaded]= useState(false);
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/budgetdifferent')
+        axios.get('http://localhost:8000/api/budgetdifferent/')
             .then(res => {
                 setBudgets(res.data);
                 setLoaded(true);
+                console.log(res.data);
             })
             .catch(err =>console.log(err))
     },[]);
@@ -64,7 +65,7 @@ const Main = props =>{
     ];
 
     let monthData = [];
-    if(loaded){
+    if(loaded && budgets.length > 0){
         budgets.map(item =>{
             let monthAmountCount = 0;
             item.budgetItems.map(otherItem =>{
@@ -102,7 +103,7 @@ const Main = props =>{
                 <div id="monthBudgets">
                     <h3><i>Monthly Budgets: </i></h3>
                     {
-                        loaded?
+                        loaded && budgets.length > 0?
                         <BudgetList budgets = {budgets} removeFromDom = {removeFromDom} className = "card-body"/>:
                         null
                     }

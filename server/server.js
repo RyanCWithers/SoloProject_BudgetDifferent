@@ -1,12 +1,14 @@
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
-const app = express();
+require('./config/mongoose.config')(process.env.DB_NAME);
 
-require('./config/mongoose.config');
+const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 require('./routes/budget.routes')(app);
-app.listen(8000, ()=> console.log('Listening on Port 8000'));
+app.listen(process.env.DB_PORT, ()=> console.log(`Listening on Port ${process.env.DB_PORT}`));

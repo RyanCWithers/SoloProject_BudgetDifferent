@@ -20,7 +20,7 @@ const BudgetCreate = props =>{
                 if(res.data.errors){
                     setErrs(res.data.errors);
                 }else{
-                    navigate('/api/budgetdifferent');
+                    navigate('/api/budgetdifferent/');
                 }
              })
             .catch(err => console.log(err))

@@ -56,16 +56,3 @@ module.exports.deleteBudgetItem = (req, res) =>{
         .then(result => res.json(result))
         .catch(err => res.json(err))
 };
-
-// module.exports.updateBudgetItem = (req, res) =>{
-//     const itemId = req.params.itemId;
-//     Budget.findOneAndUpdate(
-//         {_id: req.params.id, budgetItems._id:},
-//         {$set: 
-//             {'budgetItems.itemId': req.body}
-//         },
-//         {new: true}
-//     )
-//         .then(updatedItem => res.json(updatedItem))
-//         .catch(err => res.json(err))
-// };

@@ -36,6 +36,7 @@ const BudgetForm = props =>{
         //     .catch(err => console.log(err))
 
         onSubmitProp({state});
+        console.log(state);
     };
     return(
         <div>

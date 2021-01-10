@@ -134,14 +134,14 @@ form label{
   margin-bottom: 2%;
 }
 
-#allBudgets{
+#allBudgets, #budgetItemList{
   overflow: scroll;
   overflow-x: hidden;
-  height: 400px;
-  
+  height: 300px;
 }
   #allBudgets li{
     font-size: 21px;
     list-style: none;
   }
+
 

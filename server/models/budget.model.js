@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const BudgetSchema = new mongoose.Schema({
     budgetMonth: {type: String, required: [true, 'The month name is required.']},
@@ -13,6 +14,6 @@ const BudgetSchema = new mongoose.Schema({
             itemType: {type: String}
         }
     ]
-}, {timestamps: true})
+}, {timestamps: true});
 
 module.exports.Budget = mongoose.model('Budget', BudgetSchema);

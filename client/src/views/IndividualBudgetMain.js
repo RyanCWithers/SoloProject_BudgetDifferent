@@ -84,8 +84,8 @@ const IndividualBudgetMain = props =>{
         <div>
             <Navbar />
             <div class = "pageContain">
-                <div className = "container">
-                    <h1>{budget.budgetMonth} {budget.budgetYear}</h1>
+                <h1>{budget.budgetMonth} {budget.budgetYear}</h1>
+                <div className = "container" id = "budgetItemList">
                     <ul>
                         <div className = "row mx-auto text-center">
                             <h4 className = "col">Description</h4>
@@ -114,10 +114,11 @@ const IndividualBudgetMain = props =>{
                             null
                         }
                     </ul>
-                    <Link to={'/api/budgetdifferent/' + props.id + '/new'}>
-                            <button className="btn btn-light my-2">Create Item</button>
-                    </Link>
+                    
                 </div>
+                <Link to={'/api/budgetdifferent/' + props.id + '/new'}>
+                            <button className="btn btn-light my-2">Create Item</button>
+                </Link>
                 {
                     loaded?
                     <div>
